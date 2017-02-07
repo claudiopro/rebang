@@ -4,7 +4,7 @@ Like React, top down composition of shell commands as reusable components
 
 ## Rationale
 
-_«Once you hold a hammer, everything looks like a nail.»_ This is a proof of concept to represent hyerarchies of shell commands as reusable components, and compose them using JSX doubles.
+_«Once you hold a hammer, everything looks like a nail.»_ This is a proof of concept to represent hierarchies of shell commands as reusable components, and compose them using JSX doubles.
 
 A component maps to a shell command, attributes map to flags, and content maps to stdin. When rendered, the inner components' output is piped to the outer component's stdin.
 
