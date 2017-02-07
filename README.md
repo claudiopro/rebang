@@ -16,11 +16,11 @@ echo 'Hello Rebang!' | wc -w
 ```
 
 ```jsx
-const rebang = require('rebang-shell'),
+const RebangShell = require('rebang-shell'),
 	Wc = require('rebang-commands/wc'),
 	Echo = require('rebang-commands/echo');
 
-rebang.execute(
+RebangShell.execute(
 	<Wc w={true}>
 		<Echo>Hello Rebang!</Echo>
 	</Wc>
