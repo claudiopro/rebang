@@ -27,6 +27,30 @@ RebangShell.execute(
 );
 ```
 
+## Components
+
+Components must, at a minimum, define an `execute` method. _Note the API is not final yet_.
+
+For instance, `rebang-commands/wc` could be implemented as:
+
+```jsx
+const Rebang = require('rebang'),
+	RebangShell = require('rebang-shell');
+
+const Wc = Rebang.createCommand({
+	execute: function() {
+		let args = [];
+		if (this.props.w) {
+			args.push('-w');
+		}
+		// Rebang takes care of piping stdin and stdout
+		return RebangShell.execute(`wc ${args.join(' ')}`);
+	}
+});
+
+module.exports = Wc;
+```
+
 ## Lifecycle
 
 Similarly to React, Rebang components have a lifecycle. Rebang invokes the `execute` method on each component. By default, components are re-executed every time their state or props change. The implementor has a chance to re-execute anyway or bail early by overriding the `shouldComponentExecute` method.
