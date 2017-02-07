@@ -44,7 +44,7 @@ const Wc = Rebang.createCommand({
 			args.push('-w');
 		}
 		// Rebang takes care of piping stdin and stdout
-		return RebangShell.execute(`wc ${args.join(' ')}`);
+		return `wc ${args.join(' ')}`;
 	}
 });
 
